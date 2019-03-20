@@ -1,0 +1,46 @@
+
+<mat-toolbar>
+  <label class="company-header">
+      Logo
+  </label>
+</mat-toolbar>
+
+
+<div class="container-fluid mt-2">
+<div class="row h-100">
+<div class="col-md-6 col-lg-4 col-xl-4 col-12 mx-auto my-auto">
+<div class="card mt-4">
+  <mat-toolbar color="primary">
+      <button mat-fab class="ml-auto mr-auto mt-5">
+          <mat-icon aria-label="Example icon-button with a heart icon" class="text-white">lock</mat-icon>
+        </button>
+  </mat-toolbar>
+
+      <div class="col-md-12 col-lg-12 col-12 col-xl-12 mt-5">
+          <form class="example-form">
+              <mat-form-field class="full-width">
+                <input matInput placeholder="Username">
+              </mat-form-field>
+
+                <mat-form-field class="full-width mt-3">
+                  <input type="password" matInput placeholder="Password">
+                  <mat-icon id="passwordvisibility" matSuffix>visibility</mat-icon>
+                </mat-form-field>
+
+                <div class="row p-3">
+                  <button mat-raised-button class="full-width p-1 signin-btn" routerLink="/home" routerLinkActive="active" color="primary">Sign In</button>
+              </div>
+
+                <div class="row p-2">
+                  <div class="col-md-6 col-lg-6 col-xl-6 col-12">
+                      <label class="anchoreffect">Forgot password?</label>
+                  </div>
+              </div>
+            </form>
+      </div>
+
+
+</div>
+</div>
+</div>
+</div>

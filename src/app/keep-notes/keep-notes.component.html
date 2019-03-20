@@ -1,0 +1,21 @@
+<div class="container-fluid mt-2">
+    <div class="row">
+      <div class="card-columns">
+          <div class="col-md-12 col-12 card" *ngFor="let notes of notesList">
+              <div class="row">
+                  <div class="col-md-12 col-12 mt-1">
+                      <p>{{notes.note}}</p>
+                  </div>
+                  <div class="col-md-12 col-12 mt-1">
+                      <a href="{{notes.url}}" target="_blank">{{notes.url}}</a>
+                  </div>
+                  <div class="col-md-12 col-12 mt-1 mb-1 ml-auto mr-auto">
+                    <img [src]="notes.files[0]" height="200" *ngIf="notes.files.length > 0" class="img-fluid">
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+    <button mat-raised-button mat-fab class="writeNote" matTooltip="Write Notes" color="accent" (click)="openDialog()"><mat-icon aria-label="Example icon-button with a heart icon">edit</mat-icon></button>
+
+</div>

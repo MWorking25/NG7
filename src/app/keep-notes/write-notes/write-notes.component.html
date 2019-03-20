@@ -1,0 +1,26 @@
+<h2 mat-dialog-title>Write Note</h2>
+<mat-dialog-content class="mat-typography">
+  <div class="row">
+      <div class="col-md-12 col-12">
+        <form class="example-form">
+          <mat-form-field class="full-width">
+            <textarea matInput name="note" [(ngModel)]="writtenNote.note" placeholder="Note"></textarea>
+          </mat-form-field>
+
+          <mat-form-field class="full-width">
+            <input matInput name="url" placeholder="Link / URL" [(ngModel)]="writtenNote.url">
+          </mat-form-field>
+
+          <div>
+            <input #file type="file" accept='image/*' (change)="preview(file.files)" />
+            <img [src]="imgURL" height="200" *ngIf="imgURL">
+          </div>
+
+        </form>
+      </div>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button (click)="SaveNote()" [mat-dialog-close]="true" cdkFocusInitial>Save</button>
+</mat-dialog-actions>

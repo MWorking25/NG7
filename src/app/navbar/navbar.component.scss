@@ -1,0 +1,66 @@
+
+  
+ :root {
+
+    --bgcolor1:rgb(255, 64, 129);
+    --bgcolor2:rgb(48, 63, 159);
+    --bgcolordeg:-90deg;
+  }
+.userprofile
+{
+    height: 8em;
+    background-image: linear-gradient(var(--bgcolordeg), var(--bgcolor1), var(--bgcolor2));
+}
+
+.menulist > mat-list-item{
+    transition: right ease 1.5s;
+    position: relative;
+    &:hover {
+        right: -10px;
+    }
+}
+
+mat-panel-title{
+    transition: right ease 1.5s;
+    position: relative;
+    &:hover {
+        right: -10px;
+    }
+}
+
+.avatar
+{
+    height: 2em;
+    width: 7.5%;
+    padding: 0px 30px;
+    border-radius: 50%;
+}
+
+.sidebaravtar
+{
+    height: 5em;
+    width: 5em;
+    border-radius: 50%;
+}
+
+
+.pointercursor{
+    cursor: pointer;
+}
+
+.mt-5em
+{
+    margin-top: 5rem;
+}
+
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+}
