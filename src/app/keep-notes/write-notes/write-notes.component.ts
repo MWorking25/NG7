@@ -7,6 +7,7 @@ import {NotesService} from '../../services/notes.service';
   styleUrls: ['./write-notes.component.scss']
 })
 export class WriteNotesComponent implements OnInit {
+  
   public imagePath;
   imgURL: any;
   public message: string;
@@ -14,7 +15,7 @@ export class WriteNotesComponent implements OnInit {
   ListOfNotes:Notes[] = [];
   writtenNote:Notes = {note:'',url:'',comments:[{comment:'',createdby:'',createddate:''}],files:[],lables:[],createdby:'sample user',createddate:new Date(),todos:[{item:'',createddate:new Date(),completed:'',completeddate:new Date()}]};
 
-  constructor(private _NotesService : NotesService) { }
+  constructor(private _NotesService : NotesService) {}
 
   ngOnInit() {
 
@@ -27,6 +28,12 @@ export class WriteNotesComponent implements OnInit {
         this.ListOfNotes = [];
       }
 
+      if (this._NotesService.subsVar  != undefined) {    
+        this._NotesService.subsVar = this._NotesService.    
+        invokeKeepNoteFunction.subscribe((index:number) => {    
+              this.getNoteDetails(index);
+        });    
+      }
   }
 
   
@@ -54,6 +61,11 @@ export class WriteNotesComponent implements OnInit {
     this.ListOfNotes.push(this.writtenNote);
     localStorage.setItem('Notes', JSON.stringify(this.ListOfNotes));
     this._NotesService.ListNotes(); 
+  }
+
+  getNoteDetails(index)
+  {
+    console.log(index);
   }
 
 }

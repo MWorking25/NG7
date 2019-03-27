@@ -17,7 +17,8 @@ import {
   MatSidenavModule, MatSliderModule, MatSlideToggleModule, MatSnackBarModule, MatSortModule,
   MatStepperModule, MatTableModule, MatTabsModule, MatToolbarModule, MatTooltipModule, MatTreeModule
 } from '@angular/material';
-
+import {InputEditorModule} from 'angular-inline-editors';
+import { SelectEditorModule } from 'angular-inline-editors';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -39,6 +40,8 @@ import { WriteNotesComponent } from './keep-notes/write-notes/write-notes.compon
     WriteNotesComponent
   ],
   imports: [
+    InputEditorModule.forRoot(),
+    SelectEditorModule.forRoot(),
     FormsModule,
     BrowserModule,
     AppRoutingModule,

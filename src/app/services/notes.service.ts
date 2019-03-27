@@ -6,6 +6,7 @@ import { Subscription } from 'rxjs/internal/Subscription';
 export class NotesService {
 
   invokeKeepNoteFunction = new EventEmitter();        
+  invokeWriteNoteFunction = new EventEmitter();        
   subsVar: Subscription;    
 
   constructor() { }
@@ -13,5 +14,9 @@ export class NotesService {
   ListNotes()
   {
     this.invokeKeepNoteFunction.emit();    
+  }
+  getNoteDetails(noteindex)
+  {
+    this.invokeWriteNoteFunction.emit(noteindex);    
   }
 }

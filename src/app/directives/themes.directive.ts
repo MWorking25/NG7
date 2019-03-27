@@ -1,10 +1,11 @@
 import { Directive, ElementRef, Input, Renderer2, OnInit , OnChanges, ViewContainerRef, TemplateRef} from '@angular/core';
 
 @Directive({
-  selector: '[appThemes], [primarybg], [accentbg]'
+  selector: '[appThemes], [primarybg], [accentbg], [primaryclr]'
 })
 export class ThemesDirective implements OnInit, OnChanges {
 
+  @Input() primaryclr: string;
   @Input() primarybg: string;
   @Input() accentbg: string;
 
@@ -19,6 +20,9 @@ export class ThemesDirective implements OnInit, OnChanges {
     let accentbgcolor = `${ this.accentbg }`;
     this.renderer.setStyle(this.elem.nativeElement, 'background-color', accentbgcolor);
 
+    let primaryclr = `${ this.primaryclr }`;
+    this.renderer.setStyle(this.elem.nativeElement, 'color', primaryclr);
+
 
   }
 
@@ -29,6 +33,9 @@ export class ThemesDirective implements OnInit, OnChanges {
 
     let accentbgcolor = `${ this.accentbg }`;
     this.renderer.setStyle(this.elem.nativeElement, 'background-color', accentbgcolor);
+
+    let primaryclr = `${ this.primaryclr }`;
+    this.renderer.setStyle(this.elem.nativeElement, 'color', primaryclr);
 
   }
 
